@@ -1,0 +1,71 @@
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #15202B;
+  display: flex;
+  color: white;
+  }
+
+  .leftSide {
+  width: 40vw;
+  height: 100vh;
+  background: url(../public/home2.png) center no-repeat;
+  background-color: #00ACDF;
+  cursor: pointer;
+  }
+
+  .leftSide:hover {
+    width: 40vw;
+    height: 100vh;
+    background: url(../public/home.jpg) center no-repeat;
+    background-color: #00ACDF;
+    cursor: pointer;
+    transition: 1000ms;
+  }
+
+  .rightSide {
+    width: 60vw;
+    padding: 4rem;
+  }
+
+  .title {
+    font-size: 6rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+
+  }
+
+  .signUp,
+  .signIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 2.2rem;
+    border-radius: 1rem;
+    background-color: white;
+    color: #15202B;
+    font-weight: 600;    
+    cursor: pointer;
+  }
+
+  .signUp {
+    margin-bottom: 2rem;
+  }
+
+  .signUp:hover,
+  .signIn:hover {
+    background-color: #00ACDF;
+    color: white;
+    transition: 250ms;
+    scale: 1.02;
+  }

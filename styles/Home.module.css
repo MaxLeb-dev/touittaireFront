@@ -1,0 +1,43 @@
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #15202B;
+  display: flex;
+}
+
+.logo {
+  cursor: pointer;
+  width: 6rem;
+  margin: 1.5rem 0rem 0rem 2rem;
+}
+
+.leftSide,
+.middleSide,
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.leftSide {
+  width: 30vw;
+}
+
+.middleSide {
+  width: 40vw;
+  border:  solid #414f5c;
+  border-width: 0px 1px 0px 1px;
+  /* overflow: scroll;
+  overflow: hidden; */
+}
+
+.rightSide {
+  width: 30vw;
+}
+
+.title {
+margin: 2rem;
+font-weight: 500;
+}
