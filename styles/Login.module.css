@@ -29,13 +29,14 @@
 .rightSide {
   width: 55vw;
   min-width: 422px;
-  padding: 2.5rem;
+  padding: 4rem;
 }
 
 .title {
   font-size: 4rem;
   font-weight: bold;
   line-height: 1.2em;
+  padding-top: 12rem;
 }
 
 .subtitle {
@@ -56,9 +57,10 @@
   align-items: center;
   width: 16rem;
   height: 2.4rem;
-  border-radius: 1rem;
+  border-radius: 2rem;
   background-color: white;
   color: #15202B;
+  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -67,10 +69,9 @@
   margin-bottom: 2rem;
 }
 
-.signUp:hover,
-.signIn:hover {
+.signUp:active,
+.signIn:active {
   background-color: #00ACDF;
   color: white;
-  transition: 250ms;
-  scale: 1.02;
+  transform: scale(.95);
 }

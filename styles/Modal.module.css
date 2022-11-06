@@ -6,13 +6,12 @@
     top: 35%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 35vw;
-    height: 50vh;
+    width: 20vw;
+    height: 38vh;
     background-color: #15202B;
     border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.3rem 1rem;
     padding: 1rem;
-
 }
 
 .footer button {
@@ -24,10 +23,19 @@
     border: none;
     background-color: #05ACDF;
     color: white;
-    border-radius: 1rem;
-    font-size: 14px;
-    font-weight: bold;
+    border-radius: 2rem;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
     cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.footer button:active {
+    background-color: #fff;
+    color: #00ACDF;
+    font-size: 16px;
+    transform: scale(.95);
 }
 
 .closer {
@@ -65,10 +73,15 @@
 .input:focus {
     outline: 0.075rem solid white;
     color: white;
-    scale: 1.05;
 }
 
 .title {
     color: white;
     margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.logo {
+width: 3.125rem;
+margin-top: 1rem;
 }

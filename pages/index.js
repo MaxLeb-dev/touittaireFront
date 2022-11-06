@@ -1,6 +1,5 @@
-import Head from 'next/head';
-import Home from '../components/Home';
-import Login from '../components/Login';
+import Head from 'next/head'
+import Home from '../components/Home'
 
 function Index() {
   return (
@@ -8,7 +7,7 @@ function Index() {
       <Head>
         <title>Home / Touittaire</title>
       </Head>
-      <Login />
+      <Home />
     </>
   );
 }
