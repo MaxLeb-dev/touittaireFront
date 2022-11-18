@@ -1,0 +1,48 @@
+.container {
+    border: #414f5c solid;
+    border-width: 0 0 1px 0;
+    padding: 2rem;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.avatar {
+    width: 5rem;
+    border-radius: 5rem;
+}
+
+.content {
+    font-size: 18px;
+    margin: 0 0 0 1rem;
+}
+
+.userName {
+    color: #6c8194;
+}
+
+.touit {
+    margin: 0 0 2rem 0;
+    letter-spacing: 0;
+    /* border: red solid; */
+}
+
+.heart {
+    color: #fff;
+    cursor: pointer;
+    margin: 0 0.5rem 0 0;
+}
+
+.trash {
+    color: #fff;
+    margin: 0 0 0 1rem;
+    cursor: pointer;
+}
+
+.hashtag {
+    color: #00ACDF;
+    text-decoration: none;
+}

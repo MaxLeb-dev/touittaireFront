@@ -1,63 +1,58 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../reducers/user'
-import { addTouit, loadTouit } from '../reducers/touit'
+import { loadTouit } from '../reducers/touit'
 import { useRouter } from 'next/router'
-import LastTouit from './LastTouit'
+import Touit from './touit'
 import Trends from './Trends'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import styles from '../styles/Hashtag.module.css'
 
-function Home() {
-
+function Hashtag() {
+    
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user.value)
+    const touitData = useSelector((state) => state.touit.value)
 
     // '/login' redirection if not logged in
     const router = useRouter();
+    const { hashtag } = router.query
     if (!user.token) {
         router.push('/login');
     }
 
-    const [newTouit, setNewTouit] = useState('')
+    const [query, setQuery] = useState('#')
 
     useEffect(() => {
-        if (!user.token) {
+        if (!hashtag) {
             return
         }
-        fetch(`http://localhost:3000/touits/all/${user.token}`)
+
+        setQuery('#' + hashtag)
+
+        fetch(`http://localhost:3000/touits/hashtag/${user.token}/${hashtag}`)
             .then(response => response.json())
             .then(data => {
                 data.result && dispatch(loadTouit(data.touit))
             })
-    }, [])
+    }, [hashtag])
 
-    const handleInput = (e) => {
-        if (newTouit.length < 280 || e.nativeEvent.inputType === 'deleteContentBackward') {
-            setNewTouit(e.target.value)
+    const handleSubmit = () => {
+        if (query.length > 1) {
+            router.push(`/hashtag/${query.slice(1)}`)
         }
     }
 
-    const handleSubmit = () => {
-        fetch(`http://localhost:3000/touits`, {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ token: user.token, content: newTouit }),
-        }).then(response => response.json())
-            .then(data => {
-                if (data.result) {
-                    const createdTouit = { ...data.touit, author: user }
-                    dispatch(addTouit(createdTouit))
-                    setNewTouit('')
-                }
-            })
-    }
-
-
+    const touits = touitData.map((data, i) => {
+        return <Touit key={i} {...data} />
+    })
 
     return (
         <div className={styles.main}>
             <div className={styles.leftSide}>
+                <Link href='/'>
                 <img className={styles.logo} src='/logo.png' alt='logo' />
+                </Link>
                 <div className={styles.userSection}>
                     <div>
                         <img className={styles.avatar} src='/avatar.png' alt='avatar' />
@@ -70,22 +65,25 @@ function Home() {
                 </div>
             </div>
             <div className={styles.middleSide}>
-                <h2 className={styles.title}>Home</h2>
-                <div className={styles.touitSection}>
-                    <input className={styles.input} type='text' placeholder="What's up?" name='newTouit' onChange={(e) => handleInput(e)} value={newTouit} />
-                    <div className={styles.validateTouit}>
-                        <p>{newTouit.length}/280</p>
-                        <button className={styles.button} onClick={() => handleSubmit()}>Touit</button>
-                    </div>
+                <h2 className={styles.title}>Hashtags</h2>
+                <div className={styles.searchSection}>
+                    <input
+                        className={styles.input}
+                        type='text'
+                        onChange={(e) => setQuery('#' + e.target.value.replace(/^#/, ''))}
+                        onKeyUp={(e) => e.key === 'Enter' && handleSubmit()}
+                        value={query}
+                    />
                 </div>
-                <LastTouit />
+                {touits.length === 0 && <p className={styles.noTouit}>No touits found with #{hashtag}</p>}
+                {touits}
             </div>
             <div className={styles.rightSide}>
                 <h2 className={styles.title}>Trends</h2>
-                <Trends/>
+                <Trends />
             </div>
         </div>
     );
 };
 
-export default Home;
+export default Hashtag;

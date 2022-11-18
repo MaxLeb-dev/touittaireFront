@@ -6,6 +6,8 @@
   display: flex;
   color: white;
   overflow: hidden;
+  min-width: 54rem;
+  min-height: 54rem;
 }
 
 .leftSide {
@@ -60,7 +62,7 @@
   border-radius: 2rem;
   background-color: white;
   color: #15202B;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
 }

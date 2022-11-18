@@ -1,16 +1,25 @@
-// import "antd/dist/antd.css";
 import styles from '../styles/Login.module.css'
 import SignUp from './SignUp'
 import SignIn from './SignIn'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { useDispatch, useSelector } from 'react-redux'
 
-const Login = () => {
+function Login() {
+
+    const user = useSelector((state) => state.user.value);
+
+    const router = useRouter()
+    if (user.token) {
+        router.push('/')
+    }
+
     const [signUpOpenModal, setSignUpOpenModal] = useState(false)
     const [signInOpenModal, setSignInOpenModal] = useState(false)
-    
+
     return (
         <div className={styles.main}>
-            <div className={styles.leftSide}/>
+            <div className={styles.leftSide} />
             <div className={styles.rightSide}>
                 <h2 className={styles.title}>See what's <br /> happening</h2>
                 <h3 className={styles.subtitle}>Join Touittaire today</h3>
@@ -18,8 +27,8 @@ const Login = () => {
                 <h4 className={styles.h4}>Already have an account ?</h4>
                 <div className={styles.signIn} onClick={() => setSignInOpenModal(!signInOpenModal)}>Sign In</div>
             </div>
-            {signUpOpenModal && <SignUp closeModal={setSignUpOpenModal} title={"Create your Touittaire account"} button={"Sign up"}/>}
-            {signInOpenModal && <SignIn closeModal={setSignInOpenModal} title={"Connect to Touittaire"} button={"Sign in"}/>}
+            {signUpOpenModal && <SignUp closeModal={setSignUpOpenModal} title={"Create your Touittaire account"} button={"Sign up"} />}
+            {signInOpenModal && <SignIn closeModal={setSignInOpenModal} title={"Connect to Touittaire"} button={"Sign in"} />}
         </div>
     );
 };

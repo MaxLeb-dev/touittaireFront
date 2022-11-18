@@ -1,0 +1,28 @@
+.container {
+    background-color: #192734;
+    border-radius: 1rem;
+    margin: 0 2rem 2rem 2rem;
+}
+
+.hashtagContainer {
+    cursor: pointer;
+    padding: 1.5rem 1rem 1rem 1.5rem;
+}
+
+.hashtagContainer:hover {
+    background-color: #1f3040;
+    border-radius: 1rem;
+}
+
+.hashtag {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0;
+
+}
+
+.countTouit {
+    color: #6c8194;
+    font-size: 14px;
+    margin: 0;
+}
