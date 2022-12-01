@@ -1,12 +1,13 @@
+import styles from '../styles/Hashtag.module.css'
+import Touit from './touit'
+import Trends from './Trends'
+import Resizer from './Resizer'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../reducers/user'
 import { loadTouit } from '../reducers/touit'
 import { useRouter } from 'next/router'
-import Touit from './touit'
-import Trends from './Trends'
-import Link from 'next/link'
-import styles from '../styles/Hashtag.module.css'
 
 function Hashtag() {
     

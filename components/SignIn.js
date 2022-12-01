@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../reducers/user'
-import styles from '../styles/Modal.module.css'
+import styles from '../styles/SignIn.module.css'
 import { IoClose } from 'react-icons/io5'
 
 function SignIn(props) {
@@ -30,8 +30,8 @@ function SignIn(props) {
     }
 
     return (
-        <div className={styles.background}>
-            <div className={styles.container}>
+        <div className={styles.background} onClick={() => props.closeModal(false)}>
+            <div className={styles.container} onClick={(e)=> e.stopPropagation()}>
                 <img className={styles.logo} src="/logo.png" alt="logo" />
                 <IoClose className={styles.closer} onClick={() => props.closeModal(false)} />
                 <div className={styles.title}>

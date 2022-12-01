@@ -1,9 +1,10 @@
 import styles from '../styles/Login.module.css'
 import SignUp from './SignUp'
 import SignIn from './SignIn'
+import Resizer from './Resizer'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 function Login() {
 

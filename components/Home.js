@@ -1,11 +1,12 @@
+import styles from '../styles/Home.module.css'
+import LastTouit from './LastTouit'
+import Trends from './Trends'
+import Resizer from './Resizer'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../reducers/user'
 import { addTouit, loadTouit } from '../reducers/touit'
 import { useRouter } from 'next/router'
-import LastTouit from './LastTouit'
-import Trends from './Trends'
-import styles from '../styles/Home.module.css'
 
 function Home() {
 
