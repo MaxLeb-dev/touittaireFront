@@ -26,7 +26,7 @@ function SignUp(props) {
             body: JSON.stringify({ firstName, userName, password })
         }).then(response => response.json())
             .then(data => {
-                data.result && dispatch(login({ token: data.token, firstName, userName }))
+                data.result && dispatch(login({ token: data.token, firstName, userName, avatar: data.avatar }))
             })
     }
 

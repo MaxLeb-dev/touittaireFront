@@ -47,7 +47,7 @@ function Touit(props) {
     return (
         <div className={styles.container}>
             <div className={styles.userInfo}>
-                <img className={styles.avatar} src="/avatar.png" alt="avatar" />
+                <img className={styles.avatar} src={props.author.avatar} alt="avatar" />
                 <p className={styles.content}>
                     <span className={styles.firstName}>{props.author.firstName}</span>
                     <span className={styles.userName}>@{props.author.userName} · <Moment className={styles.moment} fromNow ago>{props.createdAt}</Moment></span>
