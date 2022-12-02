@@ -10,7 +10,7 @@ function Touit(props) {
     const user = useSelector((state) => state.user.value)
 
     const handleLike = () => {
-        fetch(`http://localhost:3000/touits/like`, {
+        fetch(`https://touittaire-back.vercel.app/touits/like`, {
             method: 'PUT',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({ token: user.token, touitId: props._id }),
@@ -21,7 +21,7 @@ function Touit(props) {
     }
 
     const handleDelete = () => {
-        fetch(`http://localhost:3000/touits`, {
+        fetch(`https://touittaire-back.vercel.app/touits`, {
             method: 'DELETE',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ token: user.token, touitId: props._id })

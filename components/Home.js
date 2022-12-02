@@ -24,7 +24,7 @@ function Home() {
         if (!user.token) {
             return
         }
-        fetch(`http://localhost:3000/touits/all/${user.token}`)
+        fetch(`https://touittaire-back.vercel.app/touits/all/${user.token}`)
             .then(response => response.json())
             .then(data => {
                 data.result && dispatch(loadTouit(data.touit))
@@ -38,7 +38,7 @@ function Home() {
     }
 
     const handleSubmit = () => {
-        fetch(`http://localhost:3000/touits`, {
+        fetch(`https:/touittaire-back.vercel.app/touits`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ token: user.token, content: newTouit }),

@@ -20,7 +20,7 @@ function SignUp(props) {
     const [password, setPassword] = useState('')
 
     const handleSubmit = () => {
-        fetch(`http://localhost:3000/users/signup`, {
+        fetch(`https://touittaire-back.vercel.app/users/signup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ firstName, userName, password })

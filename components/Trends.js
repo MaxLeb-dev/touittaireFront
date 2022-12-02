@@ -10,7 +10,7 @@ function Trends() {
     const [trendData, setTrenddata] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:3000/touits/trends/${user.token}`)
+        fetch(`https://touittaire-back.vercel.app/touits/trends/${user.token}`)
             .then(response => response.json())
             .then(data => {
                 data.result && setTrenddata(data.trends)

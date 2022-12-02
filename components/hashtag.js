@@ -30,7 +30,7 @@ function Hashtag() {
 
         setQuery('#' + hashtag)
 
-        fetch(`http://localhost:3000/touits/hashtag/${user.token}/${hashtag}`)
+        fetch(`https://touittaire-back.vercel.app/touits/hashtag/${user.token}/${hashtag}`)
             .then(response => response.json())
             .then(data => {
                 data.result && dispatch(loadTouit(data.touit))
