@@ -38,7 +38,7 @@ function Home() {
     }
 
     const handleSubmit = () => {
-        fetch(`https:/touittaire-back.vercel.app/touits`, {
+        fetch(`https://touittaire-back.vercel.app/touits`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ token: user.token, content: newTouit }),
